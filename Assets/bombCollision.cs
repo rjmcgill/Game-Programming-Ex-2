@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bombCollision : MonoBehaviour
 {
+    bool kaboom = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +21,18 @@ public class bombCollision : MonoBehaviour
     {
         if (collision.gameObject.name == "net")
         {
+            FindObjectOfType<Manager>().GameOver();
+            kaboom = true;
             Destroy(gameObject);
         }
         if (collision.gameObject.name == "ground")
         {
             Destroy(gameObject);
         }
+    }
+
+    public bool GetKaboom()
+    {
+        return kaboom;
     }
 }
