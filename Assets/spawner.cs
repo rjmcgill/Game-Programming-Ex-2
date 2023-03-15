@@ -14,7 +14,6 @@ public class spawner : MonoBehaviour
     void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        //bombWidth = bomb.transform.position.x;
     }
 
     // Update is called once per frame

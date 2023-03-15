@@ -9,14 +9,12 @@ public class netMovement : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rigidComponent;
     private float netWidth;
-    private float netHeight;
 
 
     void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         netWidth = transform.GetComponent<SpriteRenderer>().bounds.extents.x;
-        netHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y;
     }
     // Update is called once per frame
     void Update()
@@ -35,7 +33,6 @@ public class netMovement : MonoBehaviour
     {
         Vector3 viewPos = transform.position;
         viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 + netWidth, screenBounds.x - netWidth);
-        viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1, screenBounds.y);
         transform.position = viewPos;
     }
 }
