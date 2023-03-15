@@ -22,5 +22,9 @@ public class bombCollision : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collision.gameObject.name == "ground")
+        {
+            Destroy(gameObject);
+        }
     }
 }

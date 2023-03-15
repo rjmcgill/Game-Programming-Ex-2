@@ -21,5 +21,9 @@ public class fishCollision : MonoBehaviour
         if(collision.gameObject.name == "net") {
             Destroy(gameObject);
         }
+        if(collision.gameObject.name == "ground")
+        {
+            Destroy(gameObject);
+        }
     }
 }
